@@ -1,5 +1,7 @@
 package com.robsonferreir4.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +12,7 @@ import com.robsonferreir4.api.model.Client;
 public class ClientActivationService {
 	
 	@Autowired
-	private Notificator notificador;
+	private List<Notificator> notificators;
 	
 //	public ClientActivationService(Notificator notificator) {
 //		this.notificador = notificator; 
@@ -21,6 +23,9 @@ public class ClientActivationService {
 	public void activate(Client client) {
 		client.activate();
 
-		notificador.notify(client, "Seu cadastro no sistema está ativo!");
+		for(Notificator n : notificators) {
+			n.notify(client, "Seu cadastro no sistema está ativo!");
+		}
+		
 	}
 }
