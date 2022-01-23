@@ -2,6 +2,9 @@ package com.robsonferreir4.api.service;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +22,16 @@ public class ClientActivationService {
 //		
 //		System.out.println("AtivacaoClienteService: " + notificator);
 //	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("init");
+	}
+
+	@PreDestroy
+	public void destroy() {
+		System.out.println("destroy");
+	}
 
 	public void activate(Client client) {
 		client.activate();
