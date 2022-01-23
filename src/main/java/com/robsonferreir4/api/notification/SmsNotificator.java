@@ -1,10 +1,12 @@
 package com.robsonferreir4.api.notification;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.robsonferreir4.api.interfaces.Notificator;
 import com.robsonferreir4.api.model.Client;
 
+@Profile("dev")
 @Component
 public class SmsNotificator implements Notificator {
 	
