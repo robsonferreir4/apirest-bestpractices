@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.robsonferreir4.api.model.Client;
 import com.robsonferreir4.api.service.ClientActivationService;
 
 @Controller
@@ -22,6 +23,11 @@ public class FirstController {
 	@GetMapping("/hello")
 	@ResponseBody
 	public String hello() {
+		
+		Client john = new Client("John", "john@email.com", "123214421");
+		
+		ativacaoClienteService.activate(john);
+
 		return "First Controller!!!!!!!!!!!";
 	}
 

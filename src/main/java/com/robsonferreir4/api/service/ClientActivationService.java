@@ -10,11 +10,10 @@ public class ClientActivationService {
 	
 	private Notificator notificador;
 	
-
-	public ClientActivationService(Notificator notificador) {
-		this.notificador = notificador; 
+	public ClientActivationService(Notificator notificator) {
+		this.notificador = notificator; 
 		
-		System.out.println("AtivacaoClienteService: " + notificador);
+		System.out.println("AtivacaoClienteService: " + notificator);
 	}
 
 	public void activate(Client client) {
